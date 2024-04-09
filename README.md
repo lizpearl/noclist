@@ -7,11 +7,11 @@ This is code for the following assignment https://homework.adhoc.team/noclist/
 ## Installation
 Install python3.  This code was written and tested with Python 3.12.2 on MacOS 14.4.1 using the Z shell
 
-Create and activate a virtual environment for installation. This example uses `~/.virtualenv/noclist-venv`
-for the path for the new virual environment.
+Create and activate a virtual environment for installation. This example uses `~/.virtualenvs/noclist-venv`
+for the path for the new virtual environment.
 ```
 python3 -m venv ~/.virtualenvs/noclist-venv
-source ~/.virutalenvs/noclist-venv/bin/activate
+source ~/.virtualenvs/noclist-venv/bin/activate
 ```
 Clone the repo and install dependencies
 ```
@@ -36,6 +36,8 @@ To specify a specific host use
 ```
 python noclist.py --host http://0.0.0.0:8888
 ```
+After running the script you can use the `deactivate` command to exit the 
+virtual environment
 
 ## Running Tests
 In project directory, run 
