@@ -1,5 +1,6 @@
 import pytest
 from unittest.mock import patch, Mock
+
 import noclist  
 
 # Test for retry_request with a successful first try
@@ -48,6 +49,7 @@ def test_get_user_list_failure(monkeypatch):
     assert user_list is None
 
  
+ # Test that main only send the user list to stdout and that the system exits successfully with 0
 def test_main_ok(monkeypatch, capsys):
 
     monkeypatch.setattr("noclist.get_auth_token", Mock(return_value='12345'))
@@ -63,7 +65,7 @@ def test_main_ok(monkeypatch, capsys):
     captured = capsys.readouterr()
     assert captured.out == '["9757263792576857988", "7789651288773276582"]\n'
 
-
+ # Test that on a failure main does not send anything to sidout and that the system exits unsuccessfully with 1
 def test_main_fail(monkeypatch, capsys):
 
     monkeypatch.setattr("noclist.get_auth_token", Mock(return_value='12345'))
